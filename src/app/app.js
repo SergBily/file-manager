@@ -5,6 +5,9 @@ import { createInterface } from 'readline';
 import { completer } from "../utils/completer.js";
 import { messages } from "../shared/messages.js";
 import { commands } from "../shared/commands.js";
+import { checkCommandValid } from "../utils/checkCommandValid.js";
+import { operations } from "../shared/operations.js";
+import { currentDirectory } from "../shared/currentDirectory.js";
 
 
 export const app = () => {
@@ -17,15 +20,23 @@ export const app = () => {
         input: process.stdin,
         output: process.stdout,
         completer,
-        prompt: `${messages.CURRENT_DIRECTORY(getHomeDir())}\n`,
+        // prompt: `${messages.CURRENT_DIRECTORY(getHomeDir())}\n`,
     })
 
     rl.on('line', (input) => {
+        const commandWithArg = completer(input);
+
         if (input === commands.EXIT) {
             rl.close();
-        } else {
+        } else if(checkCommandValid(commandWithArg)) {
+            console.log(process.cwd());
             rl.prompt();
+            operations[commandWithArg[0]]();
+            printMessage({ type: 'CURRENT_DIRECTORY', text: currentDirectory });
+        } else {
+            printMessage({ type: 'INVALID_INPUT', text: '' });
         }
+
     })
     .on('close', () => {
         printMessage({ type: 'EXIT', text: userName });
