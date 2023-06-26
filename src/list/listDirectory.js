@@ -4,10 +4,9 @@ import { checkFolderOrFile } from './checkFolderOrFile.js';
 import { sortList } from './sortList.js';
 import { printMessage } from '../utils/printMessage.js';
 
-const __dirname = currentDirectory.get();
-
 export const listDirectory = async () => {
    try {
+    const __dirname = currentDirectory.get();
     const list = [];
     const dirents = await opendir(__dirname);
 

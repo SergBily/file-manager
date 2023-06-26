@@ -4,10 +4,9 @@ import { createReadStream } from 'fs';
 import { join } from "path";
 import { access } from "fs/promises";
 
-const __dirname = currentDirectory.get();
-
 export const cat = async (nameFile) => {
     try {
+        const __dirname = currentDirectory.get();
         const pathToFile = join(__dirname, nameFile[0]);
         await access(pathToFile);
         const readableStream = createReadStream(pathToFile, 'utf-8');
