@@ -1,3 +1,15 @@
 import { getHomeDir } from "../os/getHomeDir.js";
 
-export let currentDirectory = getHomeDir();
+class CurrentDirectory {
+    path = getHomeDir();
+
+    set(newPath) {
+        this.path = newPath;
+    }
+
+    get() {
+        return this.path;
+    }
+}
+
+export const currentDirectory = new CurrentDirectory();

@@ -1,5 +1,13 @@
 import { currentDirectory } from "../shared/currentDirectory.js";
+import { checkRootFolder } from "./checkRootFolder.js";
 
 export const up = () => {
-     currentDirectory = currentDirectory.split('/').slice(0, -1).join('/');
+   const newPathToDirectory = currentDirectory.get().split('\\').slice(0, -1);
+   const isRootFolder = checkRootFolder(newPathToDirectory);
+
+   if (isRootFolder) {
+      currentDirectory.set(`${newPathToDirectory.join('')}\\`);
+   } else {
+      currentDirectory.set(newPathToDirectory.join('\\'));
+   }
 };
