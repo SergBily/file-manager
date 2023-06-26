@@ -10,4 +10,6 @@ export const validCommandsPatterns = {
     mv: ['mv', 'path_to_file', 'path_to_new_directory'],
     os: ['os', 'arguments'],
     hash: ['hash', 'path_to_file'],
+    compress: ['compress', 'path_to_file', 'path_to_destination'],
+    decompress: ['decompress', 'path_to_file', 'path_to_destination'],
 }

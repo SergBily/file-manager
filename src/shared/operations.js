@@ -9,6 +9,7 @@ import { listDirectory } from "../list/listDirectory.js";
 import { cd } from "../navigation/cd.js";
 import { up } from "../navigation/up.js";
 import { system } from "../os/system.js";
+import { compress } from "../zlib/compress.js";
 
 export const operations = {
     up: up,
@@ -22,4 +23,5 @@ export const operations = {
     mv: move,
     os: system,
     hash: calculationHash,
+    compress: compress,
 }
