@@ -6,8 +6,6 @@ import { completer } from "../utils/completer.js";
 import { commands } from "../shared/commands.js";
 import { checkCommandValid } from "../utils/checkCommandValid.js";
 import { operations } from "../shared/operations.js";
-import { currentDirectory } from "../shared/currentDirectory.js";
-
 
 export const app = () => {
     const userName = getUserName();
@@ -27,12 +25,11 @@ export const app = () => {
         if (input === commands.EXIT) {
             rl.close();
         } else if(checkCommandValid(commandWithArg)) {
-            operations[commandWithArg[0]]();
-            printMessage({ type: 'CURRENT_DIRECTORY', text: currentDirectory.get() });
+            const arg = commandWithArg.slice(1);
+            operations[commandWithArg[0]](arg);
         } else {
             printMessage({ type: 'INVALID_INPUT', text: '' });
         }
-
     })
     .on('close', () => {
         printMessage({ type: 'EXIT', text: userName });

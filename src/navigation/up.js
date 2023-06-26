@@ -1,4 +1,5 @@
 import { currentDirectory } from "../shared/currentDirectory.js";
+import { printMessage } from "../utils/printMessage.js";
 import { checkRootFolder } from "./checkRootFolder.js";
 
 export const up = () => {
@@ -10,4 +11,5 @@ export const up = () => {
    } else {
       currentDirectory.set(newPathToDirectory.join('\\'));
    }
+   printMessage({ type: 'CURRENT_DIRECTORY', text: currentDirectory.get() });
 };

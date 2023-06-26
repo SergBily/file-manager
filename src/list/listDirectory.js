@@ -12,6 +12,7 @@ export const listDirectory = async () => {
     for await (const dirent of dirents) {
         list.push(checkFolderOrFile(dirent));
     }
+    printMessage({ type: 'CURRENT_DIRECTORY', text: currentDirectory.get() });
     console.table(sortList(list));
    } catch (_error) {
     printMessage({ type: 'ERROR', text: '' });
