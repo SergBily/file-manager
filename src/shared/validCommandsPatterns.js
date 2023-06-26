@@ -8,4 +8,5 @@ export const validCommandsPatterns = {
     rm: ['rm', 'path_to_file'],
     cp: ['cp', 'path_to_file', 'path_to_new_directory'],
     mv: ['mv', 'path_to_file', 'path_to_new_directory'],
+    os: ['os', 'arguments'],
 }
