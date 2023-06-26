@@ -4,6 +4,7 @@ import { copy } from "../files/copy.js";
 import { move } from "../files/move.js";
 import { remove } from "../files/remove.js";
 import { rn } from "../files/rename.js";
+import { calculationHash } from "../hash/calculationHash.js";
 import { listDirectory } from "../list/listDirectory.js";
 import { cd } from "../navigation/cd.js";
 import { up } from "../navigation/up.js";
@@ -20,4 +21,5 @@ export const operations = {
     cp: copy,
     mv: move,
     os: system,
+    hash: calculationHash,
 }

@@ -9,4 +9,5 @@ export const validCommandsPatterns = {
     cp: ['cp', 'path_to_file', 'path_to_new_directory'],
     mv: ['mv', 'path_to_file', 'path_to_new_directory'],
     os: ['os', 'arguments'],
+    hash: ['hash', 'path_to_file'],
 }
