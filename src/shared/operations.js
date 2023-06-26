@@ -1,3 +1,4 @@
+import { add } from "../files/add.js";
 import { cat } from "../files/cat.js";
 import { listDirectory } from "../list/listDirectory.js";
 import { cd } from "../navigation/cd.js";
@@ -8,4 +9,5 @@ export const operations = {
     ls: listDirectory,
     cd: cd,
     cat: cat,
+    add: add,
 }
