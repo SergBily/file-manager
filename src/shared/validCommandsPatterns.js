@@ -6,5 +6,6 @@ export const validCommandsPatterns = {
     add: ['add', 'new_file_name'],
     rn: ['rn', 'path_to_file', 'new_filename'],
     rm: ['rm', 'path_to_file'],
-    cp: ['cp', 'path_to_file', 'path_to_new_directory']
+    cp: ['cp', 'path_to_file', 'path_to_new_directory'],
+    mv: ['mv', 'path_to_file', 'path_to_new_directory'],
 }

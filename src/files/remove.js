@@ -9,7 +9,7 @@ export const remove = async (nameFile) => {
         const pathToFile = join(__dirname, nameFile[0]);
         await rm(pathToFile);
         printMessage({ type: 'CURRENT_DIRECTORY', text: __dirname });
-    } catch (error) {
+    } catch (_error) {
         printMessage({ type: 'ERROR', text: '' });
     }
 }

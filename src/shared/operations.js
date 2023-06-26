@@ -1,6 +1,7 @@
 import { add } from "../files/add.js";
 import { cat } from "../files/cat.js";
 import { copy } from "../files/copy.js";
+import { move } from "../files/move.js";
 import { remove } from "../files/remove.js";
 import { rn } from "../files/rename.js";
 import { listDirectory } from "../list/listDirectory.js";
@@ -16,4 +17,5 @@ export const operations = {
     rn: rn,
     rm: remove,
     cp: copy,
+    mv: move,
 }

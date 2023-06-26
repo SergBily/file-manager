@@ -9,9 +9,8 @@ export const copy = async (payload) => {
         const __dirname = currentDirectory.get();
         const [nameFile, pathToNewDirectory] = payload;
         const pathToFile = join(__dirname, nameFile);
-        const pathToNewFile = join(__dirname, pathToNewDirectory, nameFile);
         const pathToDirectory = join(__dirname, pathToNewDirectory);
-
+        const pathToNewFile = join(__dirname, pathToNewDirectory, nameFile);
         await access(pathToFile);
         await access(pathToDirectory);
         const readableStream = createReadStream(pathToFile, 'utf-8');
