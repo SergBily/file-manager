@@ -3,10 +3,11 @@ import { currentDirectory } from '../shared/currentDirectory.js';
 import { join } from 'path';
 import { rename } from 'fs/promises';
 
+const __dirname = currentDirectory.get();
+
 export const rn = async (payload) => {
     try {
         const [nameFile, newNameFile] = payload;
-        const __dirname = currentDirectory.get()
         const pathToFile = join(__dirname, nameFile);
         const newPathToFile = join(__dirname, newNameFile);
         await rename(pathToFile, newPathToFile);
