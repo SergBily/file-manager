@@ -5,4 +5,5 @@ export const validCommandsPatterns = {
     cat: ['cat', 'path_to_file'],
     add: ['add', 'new_file_name'],
     rn: ['rn', 'path_to_file', 'new_filename'],
+    rm: ['rm', 'path_to_file'],
 }
