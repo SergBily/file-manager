@@ -10,6 +10,7 @@ import { cd } from "../navigation/cd.js";
 import { up } from "../navigation/up.js";
 import { system } from "../os/system.js";
 import { compress } from "../zlib/compress.js";
+import { decompress } from "../zlib/decompress.js";
 
 export const operations = {
     up: up,
@@ -24,4 +25,5 @@ export const operations = {
     os: system,
     hash: calculationHash,
     compress: compress,
+    decompress: decompress,
 }
