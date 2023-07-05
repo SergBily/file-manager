@@ -1,0 +1,1 @@
+export const cpusProcess = (payload) => payload.map( ({model, speed} = payload) => ({model, speed}));
