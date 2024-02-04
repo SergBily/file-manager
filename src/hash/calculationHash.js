@@ -10,9 +10,7 @@ export const calculationHash = async (nameFile) => {
         const __dirname = currentDirectory.get();
         const hash = createHash('sha256');
         const pathToFile = join(__dirname, nameFile[0]);
-
         await access(pathToFile);
-
         const readableStream = createReadStream(pathToFile);
 
         readableStream.on('readable', () => {
